@@ -12,16 +12,6 @@ class ImgManager extends AbstractManager {
     );
   }
 
-  update(img) {
-    return this.database.query(`UPDATE ${this.table} SET ? WHERE id = ?`, [
-      {
-        src: img.src,
-        projectId: img.projectId,
-      },
-      img.id,
-    ]);
-  }
-
   delete(id) {
     return this.database.query(
       `DELETE FROM ${this.table} 

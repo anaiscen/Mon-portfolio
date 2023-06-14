@@ -1,4 +1,7 @@
 const express = require("express");
+const multer = require("multer");
+
+const upload = multer({ dest: "../public/images" });
 
 const router = express.Router();
 
@@ -27,9 +30,9 @@ router.delete("/project/:id", projectControllers.destroy);
 
 const imgControllers = require("./controllers/imgControllers");
 
-router.get("/img/:projectId", imgControllers.browse);
-router.put("/img/:id", imgControllers.edit);
-router.post("/img", imgControllers.add);
+router.get("/img/project/:projectId", imgControllers.browse);
+router.get("/img/:imageName", imgControllers.read);
+router.post("/img", upload.single("image"), imgControllers.add);
 router.delete("/img/:id", imgControllers.destroy);
 
 module.exports = router;

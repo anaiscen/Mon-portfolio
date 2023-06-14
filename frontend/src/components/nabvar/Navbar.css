@@ -1,23 +1,23 @@
 html {
-	height: 100% !important;
+  height: 100% !important;
 }
 body {
-	position: relative;
-	height: 100%;
-	font-size: 14px;
-	color: #363940;
+  position: relative;
+  height: 100%;
+  font-size: 14px;
+  color: #363940;
 }
 body .body {
-	height: 100%;
+  height: 100%;
 }
 .cover {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0px;
-	top: 0px;
-	background-color: rgba(0, 46, 82, 0.15);
-	padding: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 46, 82, 0.15);
+  padding: 20px;
 }
 .page {
   overflow: hidden;
@@ -25,100 +25,107 @@ body .body {
   padding: 50px 0;
 }
 * {
-	border-radius: 0 !important;
-	-webkit-border-radius: 0 !important;
-	-moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
 }
-*:focus { 
-	outline: none !important;
-	box-shadow: none !important;
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Begin Fonts */
 body {
-	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Roboto', Helvetica, Arial, sans-serif;
-	font-weight: 700;
-	margin-bottom: 10px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 h1 {
-	font-size: 36px;
+  font-size: 36px;
 }
 h2 {
-	font-size: 30px;
+  font-size: 30px;
 }
 h3 {
-	font-size: 26px;
+  font-size: 26px;
 }
 h4 {
-	font-size: 22px;
+  font-size: 22px;
 }
 h5 {
-	font-size: 18px;
+  font-size: 18px;
 }
 p {
-	font: 14px/1.5em "Roboto";
+  font: 14px/1.5em "Roboto";
 }
 .navbar-nav > li > a {
-	font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 /* End Fonts */
 
-
 section {
-	position: relative;
+  position: relative;
 }
 .page-loader {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 99999;
-	background: #FFF url(../img/page-loader.gif) center center no-repeat;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: #fff url(../img/page-loader.gif) center center no-repeat;
 }
 .devider {
-	width: 100%;
-	height: 23px;
-	background: url('../img/devider.png') no-repeat center center;
-	margin: 5px 0 10px;
+  width: 100%;
+  height: 23px;
+  background: url("../img/devider.png") no-repeat center center;
+  margin: 5px 0 10px;
 }
 .thumbnail {
-	padding: 15px;
-	margin-bottom: 20px;
-	background-color: #FFF;
-	border: 1px solid #DDD;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
-	-ms-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .form-control {
-	-webkit-box-shadow: none;
-	box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 .parallax {
-	position: relative;
-	background-position: 0 0;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	-webkit-background-size: cover;
-background-size: cover;
+  position: relative;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
-
-#header {
-	/* height: 98px; */
-}
-
 
 /* ===== Begin text colors ===== */
-.text-main { color: #363940; } /* Theme main color */
-.text-white { color: #FFF; }
-.text-off-white { color: #e7e7e7;}
-.text-dark { color: #000; }
+.text-main {
+  color: #363940;
+} /* Theme main color */
+.text-white {
+  color: #fff;
+}
+.text-off-white {
+  color: #e7e7e7;
+}
+.text-dark {
+  color: #000;
+}
 
 .navbar {
   margin: 0;
@@ -227,8 +234,6 @@ background-size: cover;
 }
 .navbar-shrink .navbar-brand {
   font-size: 20px;
-}
-.navbar-default.navbar-fixed-top.navbar-shrink .container {
 }
 .navbar-fixed-top.navbar-shrink .container {
   padding-top: 0 !important;

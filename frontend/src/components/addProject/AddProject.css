@@ -1,0 +1,51 @@
+.addProjectContainer {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.addProjectContainer h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.addProjectSection.successMessage {
+  background-color: #b2d8b2;
+  color: #155e15;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.addProjectFormLabel {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.addProjectFormInput {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.addUserFormButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addUserFormButton:hover {
+  background-color: #45a049;
+}

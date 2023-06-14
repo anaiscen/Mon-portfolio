@@ -1,16 +1,5 @@
-const joi = require("joi");
+const fs = require("fs");
 const models = require("../models");
-
-const validate = (data, forCreation = true) => {
-  const presence = forCreation ? "required" : "optional";
-  return joi
-    .object({
-      id: joi.number().integer().presence("optional"),
-      src: joi.string().max(600).presence(presence),
-      projectId: joi.number().integer().presence(presence),
-    })
-    .validate(data, { abortEarly: false }).error;
-};
 
 const browse = (req, res) => {
   models.img
@@ -24,34 +13,18 @@ const browse = (req, res) => {
     });
 };
 
-const edit = (req, res) => {
-  const img = req.body;
-  const errors = validate(req.body);
-  if (errors) {
-    res.sendStatus(422);
-  }
-  img.id = parseInt(req.params.id, 10);
-
-  models.img
-    .update(img)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
+const read = (req, res) => {
+  const { imageName } = req.params;
+  const readStream = fs.createReadStream(`../public/images/${imageName}`);
+  readStream.pipe(res);
 };
 
 // eslint-disable-next-line consistent-return
 const add = (req, res) => {
-  const errors = validate(req.body);
-  if (errors) return res.sendStatus(422);
-  const img = req.body;
+  const img = {
+    src: req.file.filename,
+    projectId: req.body.projectId,
+  };
   models.img
     .insert(img)
     .then(() => {
@@ -86,7 +59,7 @@ const destroy = (req, res) => {
 
 module.exports = {
   browse,
-  edit,
+  read,
   add,
   destroy,
 };
