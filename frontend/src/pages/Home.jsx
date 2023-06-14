@@ -1,4 +1,4 @@
-import Counter from "../components/Counter";
+import Counter from "../components/cv";
 import logo from "../assets/logo.svg";
 
 export default function Home() {
