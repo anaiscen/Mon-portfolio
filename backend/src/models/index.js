@@ -12,6 +12,7 @@ const pool = mysql.createPool({
   user: DB_USER,
   password: DB_PASSWORD,
   database: DB_NAME,
+  timezone: "Z",
 });
 
 // try a connection
@@ -28,6 +29,21 @@ pool.getConnection().catch(() => {
 // declare and fill models: that's where you should register your own managers
 
 const models = {};
+
+const UserManager = require("./UserManager");
+
+models.user = new UserManager();
+models.user.setDatabase(pool);
+
+const ProjectManager = require("./ProjectManager");
+
+models.project = new ProjectManager();
+models.project.setDatabase(pool);
+
+const ImgManager = require("./ImgManager");
+
+models.img = new ImgManager();
+models.img.setDatabase(pool);
 
 const ItemManager = require("./ItemManager");
 
