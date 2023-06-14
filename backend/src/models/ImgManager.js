@@ -29,6 +29,14 @@ class ImgManager extends AbstractManager {
       [id]
     );
   }
+
+  findAll(projectId) {
+    return this.database.query(
+      `select id, src,
+  projectId FROM img  WHERE projectId = ?`,
+      [projectId]
+    );
+  }
 }
 
 module.exports = ImgManager;

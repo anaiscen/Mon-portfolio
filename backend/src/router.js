@@ -27,8 +27,7 @@ router.delete("/project/:id", projectControllers.destroy);
 
 const imgControllers = require("./controllers/imgControllers");
 
-router.get("/img", imgControllers.browse);
-router.get("/img/:id", imgControllers.read);
+router.get("/img/:projectId", imgControllers.browse);
 router.put("/img/:id", imgControllers.edit);
 router.post("/img", imgControllers.add);
 router.delete("/img/:id", imgControllers.destroy);
