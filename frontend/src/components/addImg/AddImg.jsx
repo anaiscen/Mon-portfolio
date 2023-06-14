@@ -4,12 +4,21 @@ import { useParams } from "react-router-dom";
 import useApi from "../../services/useApi";
 
 function AddImg() {
-  // const [src, setSrc] = useState("");
-  // const [projectId, setPorjectId] = useState("");
   const [file, setFile] = useState();
   const api = useApi();
   const { projectId } = useParams();
   const [images, setImages] = useState([]);
+
+  const fetchImages = () => {
+    api
+      .get(`/img/project/${projectId}`)
+      .then((res) => {
+        setImages(res.data);
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,17 +30,22 @@ function AddImg() {
     api.post("/img", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
+    window.location.reload(false);
   };
 
-  useEffect(() => {
+  const handleDelete = (imageId) => {
     api
-      .get(`/img/project/${projectId}`)
-      .then((res) => {
-        setImages(res.data);
+      .delete(`/img/${imageId}`)
+      .then(() => {
+        window.location.reload(false);
       })
       .catch((err) => {
         console.warn(err);
       });
+  };
+
+  useEffect(() => {
+    fetchImages();
   }, [api, projectId]);
 
   return (
@@ -45,11 +59,16 @@ function AddImg() {
         <button type="submit">Submit</button>
       </form>
       {images.map((image) => (
-        <img
-          key={image.id}
-          src={`${import.meta.env.VITE_BACKEND_URL}/img/${image.src}`}
-          alt="pic"
-        />
+        <div key={image.id} className="image-container">
+          <img
+            key={image.id}
+            src={`${import.meta.env.VITE_BACKEND_URL}/img/${image.src}`}
+            alt="pic"
+          />
+          <button onClick={() => handleDelete(image.id)} type="submit">
+            Delete
+          </button>
+        </div>
       ))}
     </div>
   );
