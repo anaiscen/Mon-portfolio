@@ -49,16 +49,12 @@ function ListProject() {
       <div className="listProjectCards">
         {projectList.map((project) => (
           <div key={project.id} className="listProjectCard">
-            <div className="listProjectCardImageContainer">
-              <img
-                className="listProjectCardImage"
-                src={project.image}
-                alt="ProjectImage"
-              />
-            </div>
             <div className="listProjectCardDetails">
-              <div className="listProjectCardTitle">{project.title}</div>
+              <div className="listProjectCardTitle">
+                Projet : {project.title}
+              </div>
               <Link to={`/project/${project.id}`}>Modifier</Link>
+              <Link to={`/img/${project.id}`}>Modifier img</Link>
               <button
                 type="submit"
                 className="deleteButton"

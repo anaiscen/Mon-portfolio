@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./AddImg.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import useApi from "../../services/useApi";
 
 function AddImg() {
@@ -27,17 +27,20 @@ function AddImg() {
     formData.append("image", file);
     formData.append("projectId", projectId);
 
-    api.post("/img", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
-    window.location.reload(false);
+    api
+      .post("/img", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+      .then(() => {
+        fetchImages();
+      });
   };
 
   const handleDelete = (imageId) => {
     api
       .delete(`/img/${imageId}`)
       .then(() => {
-        window.location.reload(false);
+        fetchImages();
       })
       .catch((err) => {
         console.warn(err);
@@ -70,6 +73,7 @@ function AddImg() {
           </button>
         </div>
       ))}
+      <Link to="/admin">Retour</Link>
     </div>
   );
 }

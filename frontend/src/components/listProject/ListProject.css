@@ -1,0 +1,111 @@
+.listProjectContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.addProjectButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.listProjectCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.listProjectCard {
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.listProjectCardImageContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.listProjectCardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.listProjectCardDetails {
+  padding: 10px;
+}
+
+.listProjectCardTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.listProjectCardDetails a {
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.deleteButton {
+  padding: 6px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deleteContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.deleteConfirmation {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.deleteConfirmation p {
+  margin-bottom: 10px;
+}
+
+.deleteConfirmationButtons {
+  margin-top: 20px;
+}
+
+.deleteConfirmationButton {
+  padding: 6px 12px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.deleteConfirmationButton:last-child {
+  background-color: #007bff;
+}

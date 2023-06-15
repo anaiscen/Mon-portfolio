@@ -1,0 +1,255 @@
+.cvcontainer {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/couleur.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(60%);
+}
+.hero-content {
+  position: relative;
+  font-family: "Monserrat", sans-serif;
+  color: white;
+  text-align: center;
+  margin: 0.625rem;
+}
+.hero-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 1rem;
+}
+
+.hero-content::after {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 200px;
+  background-image: url("../../assets/photo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 2rem auto;
+}
+
+/* ////////////////// */
+
+html {
+  font-size: 14px;
+}
+
+body {
+  /* background: #a3b4c8; */
+  font-family: "Monserrat", sans-serif;
+}
+
+.experiencescontainer {
+  background: #a3b4c8;
+}
+
+h2 {
+
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  position: relative;
+}
+
+.timeline__event {
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  margin: 20px 0;
+  border-radius: 6px;
+  align-self: center;
+  width: 50vw;
+}
+
+.timeline__event:nth-child(2n + 1) {
+  flex-direction: row-reverse;
+}
+
+.timeline__event__title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #a3b4c8;
+  letter-spacing: 1.5px;
+}
+
+.timeline__event__content {
+  padding: 20px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  background: #fff;
+  width: calc(40vw - 84px);
+  border-radius: 0 6px 6px 0;
+}
+
+.timeline__event__date {
+  color: #a3b4c8;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: #022e51;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 0 20px;
+  border-radius: 6px 0 0 6px;
+}
+
+.timeline__event__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #022e51;
+  padding: 20px;
+  align-self: center;
+  margin: 0 20px;
+  background: #022e51;
+  border-radius: 100%;
+  width: 40px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  padding: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.timeline__event__icon i {
+  font-size: 32px;
+}
+
+@media (max-width: 786px) {
+  .timeline__event {
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .timeline__event__content {
+    width: 100%;
+  }
+
+  .timeline__event__icon {
+    border-radius: 6px 6px 0 0;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .timeline__ event__date {
+    border-radius: 0;
+    padding: 20px;
+  }
+
+  .timeline__event:nth-child(2n + 1) {
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .timeline__event__date {
+    border-radius: 0;
+    padding: 20px;
+  }
+
+  .timeline__event__icon {
+    border-radius: 100%;
+    margin: 0;
+  }
+}
+
+.timeline__event--type2 {
+  .timeline__event__date {
+    color: #022e51;
+    background: #b74803;
+  }
+
+  .timeline__event__icon {
+    background: #b74803;
+    color: #b74803;
+  }
+
+  .timeline__event__title {
+    color: #022e51;
+  }
+}
+
+.timeline__event--type3 {
+  .timeline__event__date {
+    color: #a3b4c8;
+    background-color: #022e51;
+  }
+
+  .timeline__event__icon {
+    background: #022e51;
+    color: #aff1b6;
+  }
+
+  .timeline__event__title {
+    color: #a3b4c8;
+  }
+}
+
+.timeline__event:last-child {
+  .timeline__event__icon:before {
+    content: none;
+  }
+}
+
+.separator {
+  border-bottom: 1px solid #000;
+}
+
+.formationcontainer {
+  background: #748495;
+}
+
+.projectImageWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.projectImage {
+  width: 200px;
+  height: auto;
+}
+
+section#projets {
+  margin-left: 5vh;
+  margin-right: 5vh;
+}
